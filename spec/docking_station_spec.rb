@@ -5,6 +5,17 @@ describe DockingStation do
   it { is_expected.to respond_to(:dock).with(1).argument }
   it { is_expected.to respond_to(:bikes) }
 
+  describe '#initialize' do
+    it "new station capacity defaults to 20" do
+      expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    end
+
+    it "new station capacity is 15 when passed 15" do
+      station = DockingStation.new 15
+      expect(station.capacity).to eq 15
+    end
+  end
+
     describe '#release_bike' do
       it 'releases_bikes' do
         subject.dock(Bike.new)
@@ -36,6 +47,5 @@ describe DockingStation do
       end
 
     end
-
   #it (subject.bike == nil) { fail "no bikes available"}
 end
