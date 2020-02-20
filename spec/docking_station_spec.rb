@@ -31,7 +31,7 @@ describe DockingStation do
       end
 
       it "returns an error if there are no spaces" do
-        20.times { subject.dock(Bike.new) }
+        DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
         expect {subject.dock(Bike.new)}.to raise_error "Sorry, no spaces available"
       end
 
