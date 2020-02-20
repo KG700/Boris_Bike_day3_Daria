@@ -4,7 +4,7 @@ class DockingStation
   attr_reader :bike
 
   # def initialize
-  #   #@bikes = Array.new
+  #   @bikes = Array.new
   #   @bike
   # end
 
@@ -16,6 +16,7 @@ class DockingStation
 
   def dock(bike)
     #@bikes.push(bike)
+    fail "Sorry, no spaces available" if @bike
     @bike = bike
   end
 
